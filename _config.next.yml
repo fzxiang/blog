@@ -1,0 +1,58 @@
+# Allow to cache content generation.
+cache:
+  enable: true
+
+# Remove unnecessary files after hexo generate.
+minify: true
+
+# 布局方案选择
+#scheme: Muse
+scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
+
+# 主题暗色模式
+darkmode: true
+
+# 知识共享许可证
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language: deed.zh
+
+
+# 菜单
+# 除了主页(home)和存档(archives)，菜单部分下的所有自定义页面都需要手动创建。
+# 参见https://theme-next.js.org/docs/theme-settings/custom-pages.html
+# 此外，支持网站地图还需要hexo-generator-sitemap插件。
+# https://github.com/hexojs/hexo-generator-sitemap
+menu:
+  home: / || fa fa-home
+  #about: /about/ || fa fa-user
+  #tags: /tags/ || fa fa-tags
+  #categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  #schedule: /schedule/ || fa fa-calendar
+  sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+  Docs:
+    default: /docs/ || fa fa-book
+    Getting Started:
+      default: /getting-started/ || fa fa-flag
+      Installation: /installation.html || fa fa-download
+      Configuration: /configuration.html || fa fa-wrench
+    Third Party Services:
+      default: /third-party-services/ || fa fa-puzzle-piece
+      Math Equations: /math-equations.html || fa fa-square-root-alt
+      Comment Systems: /comments.html || fa fa-comment-alt
+
+
+### 第三方服务插件 ###
+
+# Pjax
+# 使用AJAX加载页面，并使用pushState()更新浏览器的当前URL，
+# 而不需要重新加载页面的布局或任何资源（JS，CSS），从而提供一个快速的页面加载。
+# https://github.com/next-theme/pjax
+pjax: true
+
