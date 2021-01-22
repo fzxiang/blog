@@ -103,8 +103,10 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: 'https://gitee.com/fzxiang/blog.git'
+  - type: git
+    repo: https://gitee.com/fzxiang/blog.git
+  - type: git
+    repo: git@github.com:fzxiang/blog.git
 
 
 # 网站地图，用于引擎快速爬取网站

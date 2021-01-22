@@ -12,6 +12,7 @@ scheme: Mist
 #scheme: Gemini
 
 # 主题暗色模式
+# 白天/夜间自动开启亮色/暗色模式
 darkmode: true
 
 # 知识共享许可证
@@ -56,3 +57,19 @@ menu:
 # https://github.com/next-theme/pjax
 pjax: true
 
+
+# Comment Systems
+# 多重评论系统 changyan | disqus | disqusjs | facebook_comments_plugin | gitalk | livere | valine | vkontakte
+# 使用Gitalk 链接Github Issue API  https://gitalk.github.io
+gitalk:
+  enable: true
+  github_id:  # Github repo owner
+  repo:  # Repository name to store issues
+  client_id:  # Github Application Client ID
+  client_secret:  # Github Application Client Secret
+  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
+  language:
