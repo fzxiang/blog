@@ -103,8 +103,9 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  - type: git
-    repo: https://gitee.com/fzxiang/blog.git
+#  - type: git
+#    repo: git@gitee.com:fzxiang/blog.git
+#    branch: gh-pages
   - type: git
     repo: git@github.com:fzxiang/blog.git
 

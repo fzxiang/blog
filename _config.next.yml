@@ -63,13 +63,13 @@ pjax: true
 # 使用Gitalk 链接Github Issue API  https://gitalk.github.io
 gitalk:
   enable: true
-  github_id:  # Github repo owner
-  repo:  # Repository name to store issues
-  client_id:  # Github Application Client ID
-  client_secret:  # Github Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize github issues
+  github_id:  fzxiang
+  repo:  blog
+  client_id:  fae14697bc89bf85bf1c
+  client_secret:  cf6f70343e2df3be83d2e5dd7d33d04302ea8f28
+  admin_user:  fzxiang
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
-  language:
+  language: zh-CN
