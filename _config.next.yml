@@ -1,6 +1,6 @@
 # Allow to cache content generation.
 cache:
-  enable: true
+  enable: false
 
 # Remove unnecessary files after hexo generate.
 minify: true
@@ -90,10 +90,17 @@ local_search:
   preload: true
 
 
+# Tidio Support Chat Services
+# See: https://www.tidio.com
+# Dashboard: https://www.tidio.com/panel/dashboard
+tidio:
+  enable: true
+  key: lhyddet8opk3sbgybb3rqgfeyfjmshwg
+
 # 在侧边栏中打开指定聊天小部件的按钮。
 # 首先，你需要启用你想要的聊天服务来激活它的侧边栏按钮
 chat:
   enable: true
   service: tidio
   icon: fa fa-comment
-  text: Chat
+  text: 与我联系

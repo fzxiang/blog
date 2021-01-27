@@ -125,11 +125,3 @@ search:
   field: post
   content: true
   format: html
-
-
-# Tidio Support Chat Services
-# See: https://www.tidio.com
-# Dashboard: https://www.tidio.com/panel/dashboard
-tidio:
-  enable: true
-  key: lhyddet8opk3sbgybb3rqgfeyfjmshwg
