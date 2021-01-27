@@ -73,3 +73,27 @@ gitalk:
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
   # Available value: en, es-ES, fr, ru, zh-CN, zh-TW
   language: zh-CN
+
+
+# Local search
+# Dependencies: https://github.com/next-theme/hexo-generator-searchdb
+local_search:
+  enable: true
+  # If auto, 通过改变输入来触发搜索。
+  # If manual, 则通过按回车键或搜索键触发搜索。
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # 将 html 字符串解压缩为可读的字符串。
+  unescape: true
+  # 在页面加载时预加载搜索数据。
+  preload: true
+
+
+# 在侧边栏中打开指定聊天小部件的按钮。
+# 首先，你需要启用你想要的聊天服务来激活它的侧边栏按钮
+chat:
+  enable: true
+  service: tidio
+  icon: fa fa-comment
+  text: Chat

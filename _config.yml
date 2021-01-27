@@ -116,3 +116,20 @@ sitemap:
   rel: false
   tags: true
   categories: true
+
+# local search
+# 本地搜索不需要任何外部第三方服务，可以被搜索引擎额外索引。
+# 对于大多数用户来说，这种搜索方式是值得推荐的。
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+
+# Tidio Support Chat Services
+# See: https://www.tidio.com
+# Dashboard: https://www.tidio.com/panel/dashboard
+tidio:
+  enable: true
+  key: lhyddet8opk3sbgybb3rqgfeyfjmshwg
