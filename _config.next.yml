@@ -19,8 +19,35 @@ darkmode: true
 creative_commons:
   license: by-nc-sa
   sidebar: true
-  post: true
+  post: false
   language: deed.zh
+
+
+# 侧边栏样式
+sidebar:
+  position: right
+avatar:
+  url: /uploads/avatar.jpg
+  rounded: true
+social:
+  GitHub: https://github.com/fzxiang || fab fa-github
+  E-Mail: mailto:848026280@qq.com || fa fa-envelope
+  Weibo: https://weibo.com/18850105062 || fab fa-weibo
+
+
+# 网站底部配置
+footer:
+  since: 2018
+  copyright: Copyright Alson
+  powered: false
+
+#  beian:
+#    enable: true
+#    icp: 京ICP备 1234567890号-1
+#    gongan_id: 1234567890
+#    gongan_num: 京公网安备 1234567890号
+#    gongan_icon_url: /uploads/beian.png
+
 
 
 # 菜单
