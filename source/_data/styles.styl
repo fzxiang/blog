@@ -1,12 +1,17 @@
+// common
 .flex-wrapper
   display flex
   flex-wrap wrap-reverse
   justify-content center
   align-items center
 
+.text-center
+  text-align center
 
 // about page style
 #page-about
+  hr
+    margin-top 0
   h3, h4, h5
     &:after
       content ''
@@ -20,3 +25,21 @@
       float right
 
 
+
+
+// print
+@media print
+  body
+    font-size 8pt
+    line-height 1.8
+
+  .header, .footer, .btn, .back-to-top
+    display none
+
+  .post-block:first-of-type
+    padding-top 0
+
+  #page-about
+    h1, h2, h3, h4, h5, h6
+      vertical-align middle
+      margin .3rem 0 .2rem 0
