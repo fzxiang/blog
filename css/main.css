@@ -2969,7 +2969,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff6b49;
+  background: #c16516;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3006,24 +3006,24 @@ hr {
 .text-center {
   text-align: center;
 }
-#page-about hr {
+#page-resume hr {
   margin-top: 0;
 }
-#page-about h3:after,
-#page-about h4:after,
-#page-about h5:after {
+#page-resume h3:after,
+#page-resume h4:after,
+#page-resume h5:after {
   content: '';
   display: block;
   clear: both;
 }
-#page-about h3 span:first-child,
-#page-about h4 span:first-child,
-#page-about h5 span:first-child {
+#page-resume h3 span:first-child,
+#page-resume h4 span:first-child,
+#page-resume h5 span:first-child {
   float: left;
 }
-#page-about h3 span:last-child,
-#page-about h4 span:last-child,
-#page-about h5 span:last-child {
+#page-resume h3 span:last-child,
+#page-resume h4 span:last-child,
+#page-resume h5 span:last-child {
   float: right;
 }
 @media print {
