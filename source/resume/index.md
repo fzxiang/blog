@@ -1,31 +1,33 @@
 <div id="page-resume">
+<div class="resume-header flex-wrapper checkered">
+  <div class="flex-item" style="flex: 1">RESUME</div>
+  <div class="flex-item">XXX:XXX</div>
+</div>
+
 <div class="flex-wrapper">
-<div class="flex-item" style="flex: 1">
+  <div class="flex-item" style="flex: 1">
+    <div class="resume-info angled-135">
+       <img src="avatar.png" width="60%" />
+       <div class="name">傅子湘</div>
+       <div class="job">WEB高级前端工程师</div>
+       <div class="more">
+         <p>工作：三年半</p>
+         <p>籍贯：厦门市</p>
+         <p>年龄：27岁</p>
+       </div>
+       <ul class="">
+         <li>sdfdf</li>
+         <li>sdfdf</li>
+       </ul>
+    </div>
+  </div>
+  <div class="flex-item" style="flex: 3">
 
-
-
-### Richard Hendricks
-
- - <richard.hendriks@mail.com>
- - (912) 555-4321
- 
-</div>
-
-<div class="flex-item">
-
-![Tux, the Linux mascot](https://www.markdown.xyz/assets/images/tux.png)
-
-</div>
-</div>
-
-
-
-
-### _Experience_
+### 哈哈哈
 
 ***
 
-#### <span>CEO/President, Pied Piper</span> <span>Dec 2013 -- Dec 2014</span>
+#### <span>XXX</span> <span>XXX-XXX</span>
 
 这个是内容编辑主体的的内容，有很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
 
@@ -33,18 +35,13 @@
 - 这个说明详细，很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
 - Optimized an algorithm that holds the current world record for Weisman Scores
 
-#### <span>CEO/President, Pied Piper</span> <span>Dec 2013 -- Dec 2014</span>
+#### span>XXX</span> <span>XXX-XXX</span>
 
 这个是内容编辑主体的的内容，有很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
 
 - 这个说明详细，很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
 - 这个说明详细，很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
 - Optimized an algorithm that holds the current world record for Weisman Scores
-
-
-
-
-
 
 
 
@@ -73,23 +70,7 @@ A mapping engine that misguides you:
 
 - Web development: HTML, CSS, JavaScript
 - Compression: Mpeg, MP4, GIF
-  
-  
-<div class="text-center">
-  {% btn javascript:;, PDF下载, download fa-fw %}
+
+    </div>
+  </div>
 </div>
-</div>
-
-
-
-<script>
-    window.onload = function () {
-        const btnElem = document.getElementsByClassName('btn');
-        const pdf = Array.from(btnElem).find(item=>{
-            return item.textContent === 'PDF下载';
-        });
-        pdf.addEventListener('click', function (){
-            print()
-        });
-    }
-</script>

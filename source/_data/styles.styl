@@ -1,17 +1,66 @@
+// 样式覆盖
+.menu
+  text-align right
+
+
 // common
 .flex-wrapper
   display flex
-  flex-wrap wrap-reverse
-  justify-content center
-  align-items center
+  justify-content left
+  align-items top
 
 .text-center
   text-align center
 
+// 形状-倾斜
+.angled-135
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 1) 25%, transparent 25%,
+  transparent 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 75%,
+  transparent 75%, transparent);
+
+// 形状-正方形
+.checkered
+  background-image linear-gradient(45deg, #555 25%, transparent 25%, transparent),
+  linear-gradient(-45deg, #555 25%, transparent 25%, transparent),
+  linear-gradient(45deg, transparent 75%, #555 75%),
+  linear-gradient(-45deg, transparent 75%, #555 75%);
+
 // page-resume style
 #page-resume
+  padding 20px
+
+  .resume-header
+    margin -20px -20px 0 -20px
+    font-size 18px
+    font-weight bolder
+    color #ffffff
+    padding 4px 10px
+    background-color #262626;
+    background-size 2px 2px;
+
+  .resume-info
+    height 100%
+    color #333
+    margin 0 15px
+    padding 40px 10px
+    background-color #eaeaea;
+    background-size 10px 10px;
+    .name
+      font-size 24px
+      text-align center
+    .job
+      font-size 14px
+      text-align center
+    .more
+      margin-top 30px
+      p
+        font-size 14px
+        text-align center
+        margin-bottom 10px
+
   hr
     margin-top 0
+
   h3, h4, h5
     &:after
       content ''
@@ -24,22 +73,3 @@
     span:last-child
       float right
 
-
-
-
-// print
-@media print
-  body
-    font-size 8pt
-    line-height 1.8
-
-  .header, .footer, .btn, .back-to-top
-    display none
-
-  .post-block:first-of-type
-    padding-top 0
-
-  #page-about
-    h1, h2, h3, h4, h5, h6
-      vertical-align middle
-      margin .3rem 0 .2rem 0
