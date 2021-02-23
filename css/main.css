@@ -2969,7 +2969,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c16516;
+  background: #8ede86;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3006,6 +3006,13 @@ hr {
 .text-center {
   text-align: center;
 }
+#page-resume .resume-header {
+padding
+  color: #fff;
+  background-color: #262626;
+  background-size: 2px 2px;
+  background-image: linear-gradient(45deg, #555 25%, transparent 25%, transparent), linear-gradient(-45deg, #555 25%, transparent 25%, transparent), linear-gradient(45deg, transparent 75%, #555 75%), linear-gradient(-45deg, transparent 75%, #555 75%);
+}
 #page-resume hr {
   margin-top: 0;
 }
@@ -3027,7 +3034,11 @@ hr {
   float: right;
 }
 @media print {
+  html {
+    border: 1px #f00 solid;
+  }
   body {
+    border: 1px #008000 solid;
     font-size: 8pt;
     line-height: 1.8;
   }
@@ -3048,5 +3059,9 @@ hr {
   #page-about h6 {
     vertical-align: middle;
     margin: 0.3rem 0 0.2rem 0;
+  }
+  .main-inner {
+    width: auto !important;
+    padding-bottom: 0 !important;
   }
 }

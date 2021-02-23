@@ -49,6 +49,8 @@
     lang   : 'zh-CN'
   };
 </script>
+<link rel="stylesheet" src="../css/print.css" type="text/css" media="print" />
+
 <title>Hello World | Alson</title>
   
 
@@ -419,6 +421,13 @@ document.addEventListener('pjax:success', () => {
 
     <div class="pjax">
 
+<script>
+window.onbeforeprint = function(event) {
+    const elem =  document.getElementsByClassName('main-inner')
+    elem.style.width = 'auto'
+    elem.style.padding = '0'
+};
+</script>
 
     </div>
 </body>
