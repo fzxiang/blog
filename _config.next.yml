@@ -34,6 +34,10 @@ social:
   E-Mail: mailto:848026280@qq.com || fa fa-envelope
   Weibo: https://weibo.com/18850105062 || fab fa-weibo
 
+auto_excerpt:
+  enable: true
+  length: 150
+
 
 # 网站底部配置
 footer:
@@ -57,8 +61,8 @@ footer:
 # https://github.com/hexojs/hexo-generator-sitemap
 menu:
   home: / || fa fa-home
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
   archives: /archives/ || fa fa-archive
   #schedule: /schedule/ || fa fa-calendar
   #commonweal: /404/ || fa fa-heartbeat
@@ -156,8 +160,23 @@ custom_file_path:
   #postBodyEnd: source/_data/post-body-end.njk
   #footer: source/_data/footer.njk
   bodyEnd: source/_data/body-end.njk
-  variable: source/_data/variables.styl
+  #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
 
 
+# Show multilingual switcher in footer.
+language_switcher: true
+
+# 在主题配置文件中设置copy_button.enable为true来启用它。
+# All available themes: https://theme-next.js.org/highlight/
+# 默认情况下，NexT会显示复制和粘贴功能的结果。
+codeblock:
+  theme:
+    light: default
+    dark: tomorrow-night
+  prism:
+    light: prism
+    dark: prism-dark
+  copy_button:
+    enable: true

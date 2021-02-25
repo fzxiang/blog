@@ -8,7 +8,7 @@ subtitle: 前端搬砖打工人
 description: 记录知识-点滴积累
 keywords: Alson,傅子湘,web前端,JavaScript,Vue,NodeJS
 author: 傅子湘
-language: zh-CN
+language: en
 timezone: ''
 
 # URL
@@ -41,9 +41,19 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+
+# https://hexo.io/zh-cn/docs/asset-folders.html
+# 当资源文件管理功能打开后，Hexo将会在你每一次通过 hexo new [layout] <title> 命令创建新文章时自动创建一个文件夹。
+# 这个资源文件夹将会有与这个文章文件一样的名字。
+post_asset_folder: true
+# hexo-renderer-marked 3.1.0引入了一个新的选项，允许你在markdown中嵌入图片，而无需使用asset_img标签插件。
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
+
+# 代码高亮
 highlight:
   enable: true
   line_number: true
@@ -52,7 +62,7 @@ highlight:
   wrap: true
   hljs: false
 prismjs:
-  enable: false
+  enable: true
   preprocess: true
   line_number: true
   tab_replace: ''
@@ -125,3 +135,7 @@ search:
   field: post
   content: true
   format: html
+
+
+
+
