@@ -8,8 +8,7 @@
   display flex
   justify-content left
   align-items top
-  .flex-item
-    padding: 0.4em 1em
+
 
 .text-center
   text-align center
@@ -28,82 +27,237 @@
   linear-gradient(-45deg, transparent 75%, #555 75%);
 
 // page-resume style
+$font-size = 16px
+
 #page-resume
   position relative
-  padding 2em 1em 0 1em
-  font-size 0.6em
+  font-size $font-size
+  padding-top $font-size*2  // padding-top = font-size * 2.5
   background rgba(255,255,255,0.2)
 
-  .resume-header
+.resume-header
+  position absolute
+  top 0
+  left 0
+  right 0
+  height 2em
+  line-height  2em
+  color #cccccc
+  padding 0 1em
+  background-color: #3d3737;
+  background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png")
+
+
+// 左侧栏用户信息
+.resume-info
+  height 100%
+  box-sizing border-box
+  color #333
+  padding: 3em 0
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/light-mesh.png")
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  .name
+    font-size 1.5em
+    text-align center
+  .job
+    font-size 0.9em
+    text-align center
+  .more
+    margin-top 2em
+    p
+      font-size 0.9em
+      text-align center
+      margin-bottom 0.7em
+  ul.education-info
+    list-style: none;
+    margin-top 2.5em
+    padding: 0;
+    text-align: center;
+    li
+      line-height 2em
+    .hart
+      position relative
+      color #ffffff
+      height 3em
+      line-height 3em
+      margin-left -12px
+      margin-bottom 20px
+      background-color #333333
+      background-size 1px 1px
+      &:before
+        content "◥"
+        position absolute
+        bottom -20px
+        left 0
+        font-size 12px
+        color #2f2f2f
+
+
+
+
+
+//标题头部
+.Re-title
+  display inline-block
+  color #fff
+  fill #fff
+  line-height 2em
+  padding 0 1em
+  background-color: #333
+  background-image: url("https://www.transparenttextures.com/patterns/dark-denim.png")
+  overflow hidden
+  span
+    position relative
+    font-size 1em
+    padding-right 2em
+    &::after
+      position absolute
+      top 0
+      right 0
+      content '/'
+      display inline-block
+      color #fff
+      font-size 4em
+      backgoround #fff
+  svg
+    width 1em
+
+
+
+
+$primary-color = #999
+
+
+/*==================================
+    TIMELINE
+==================================*/
+
+
+/*-- GENERAL STYLES
+------------------------------*/
+.timeline
+  line-height 1.4em
+  list-style none
+  margin 0
+  padding 0
+  width 100%
+  color #768390
+  font-size 0.9em
+  font-family "Effra", Helvetica, sans-serif
+  -webkit-font-smoothing antialiased
+  h1, h2, h3, h4, h5, h6
+    line-height inherit
+    color #3d4351
+    margin-top 0
+
+
+
+/*----- TIMELINE ITEM -----*/
+
+.timeline-item
+  padding-left 2em
+  position relative
+  &:last-child
+    padding-bottom 0
+
+
+/*----- TIMELINE INFO -----*/
+
+.timeline-info
+  display flex
+  .timeline-title
+    flex 1
+    margin-bottom 0
+  span
+    font-weight 700
+    letter-spacing 0.2em
+    text-transform uppercase
+    white-space nowrap
+    font-size 0.75em
+
+
+/*----- TIMELINE MARKER -----*/
+
+.timeline-marker
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  width 0.6em
+  &:before
+    background $primary-color
+    border 0.2em solid transparent
+    border-radius 100%
+    content ""
+    display block
+    height 0.5em
     position absolute
     top 0
     left 0
-    right 0
-    font-size 1.5em
-    color #cccccc
-    padding 0 1em
-    background-color: #3d3737;
-    background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png");
+    width 0.5em
+    transition background 0.3s ease-in-out, border 0.3s ease-in-out
 
-  .resume-info
-    height 100%
-    box-sizing border-box
-    color #333
-    padding: 6em 0
-    background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/light-mesh.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-    .name
-      font-size 24px
-      text-align center
-    .job
-      font-size 14px
-      text-align center
-    .more
-      margin-top 30px
-      p
-        font-size 14px
-        text-align center
-        margin-bottom 10px
-    ul.education-info
-      list-style: none;
-      margin-top 40px
-      padding: 0;
-      text-align: center;
-      li
-        line-height 3em
-      .hart
-        position relative
-        color #ffffff
-        height 3em
-        line-height 3em
-        margin-left -12px
-        margin-bottom 20px
-        background-color #333333
-        background-size 1px 1px
-        &:before
-          content "◥"
-          position absolute
-          bottom -20px
-          left 0
-          font-size 12px
-          color #2f2f2f
+  &:after
+    content ""
+    width 0.2em
+    background #CCD5DB
+    display block
+    position absolute
+    top 1em
+    bottom 0
+    left 0.36em
 
+.timeline-item:last-child &:after
+  content none
+.timeline-item:not(.period):hover .timeline-marker:before
+  background transparent
+  border 0.2em solid $primary-color
 
+/*----- TIMELINE CONTENT -----*/
 
+.timeline-content
+  padding-bottom 1em
+  p code
+    padding 0.4em 0.8em
+    background #eee
+    font-size 0.9em
+    font-weight bold
+    border-radius 0.1em
+  p:last-child
+    margin-bottom: 0
+  label
+    padding 0.4em 0.8em
+    background blue
+    color #fff
+    font-weight bold
+    border-radius 0.4em
+    font-size 0.75em
 
-  hr
-    margin-top 0
+/*----- TIMELINE PERIOD -----*/
 
-  h3, h4, h5
+.period
+  padding: 0
+  .timeline-info
+    display: none
+  .timeline-marker
+    &:before
+      background: transparent
+      content: ""
+      width: 1em
+      height: auto
+      border: none
+      border-radius: 0
+      top: 0
+      bottom: 2em
+      position: absolute
+      border-bottom: 0.2em solid #CCD5DB
     &:after
-      content ''
-      display block
-      clear both
+      content: ""
+      height: 1em
+      top: auto
 
-    span:first-child
-      float left
-
-    span:last-child
-      float right
-
+  .timeline-content
+    padding: 1em 0 1em
+  .timeline-title
+    margin: 0
