@@ -35,6 +35,10 @@ $font-size = 16px
   padding-top $font-size*2  // padding-top = font-size * 2.5
   background rgba(255,255,255,0.2)
 
+  .character
+    font-size 0.8em
+    color #999
+
 .resume-header
   position absolute
   top 0
@@ -44,8 +48,8 @@ $font-size = 16px
   line-height  2em
   color #cccccc
   padding 0 1em
-  background-color: #3d3737;
-  background-image: url("https://www.transparenttextures.com/patterns/black-orchid.png")
+  background-color #3d3737;
+  background-image url("../resume/patterns/black-orchid.png")
 
 
 // 左侧栏用户信息
@@ -53,9 +57,10 @@ $font-size = 16px
   height 100%
   box-sizing border-box
   color #333
-  padding: 3em 0
-  background-color: #ffffff;
-  background-image: url("https://www.transparenttextures.com/patterns/light-mesh.png")
+  padding 3em 0
+  margin 0 1em
+  background-color #ffffff;
+  background-image url("../resume/patterns/light-mesh.png")
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   .name
     font-size 1.5em
@@ -69,33 +74,37 @@ $font-size = 16px
       font-size 0.9em
       text-align center
       margin-bottom 0.7em
-  ul.education-info
-    list-style: none;
-    margin-top 2.5em
-    padding: 0;
-    text-align: center;
-    li
-      line-height 2em
-    .hart
-      position relative
-      color #ffffff
-      height 3em
-      line-height 3em
-      margin-left -12px
-      margin-bottom 20px
-      background-color #333333
-      background-size 1px 1px
-      &:before
-        content "◥"
-        position absolute
-        bottom -20px
-        left 0
-        font-size 12px
-        color #2f2f2f
+
+ul.education-info
+  list-style: none;
+  margin-top 6em
+  padding: 0;
+  text-align: center;
+  .hart
+    position relative
+    color #ffffff
+    height 2.5em
+    margin-left -0.8em
+    line-height 2.5em
+    margin-bottom 1.5em
+    background-color: #3d3737;
+    background-image: url("../resume/patterns/black-orchid.png")
+    &:before
+      content "◥"
+      position absolute
+      line-height 1em
+      top 2.5em
+      left 0
+      color #000
+  li
+    font-size 0.8em
 
 
-
-
+.resume-experience
+  height 100%
+  box-sizing border-box
+  padding 3em 0
+  margin 0 1em
 
 //标题头部
 .Re-title
@@ -107,6 +116,8 @@ $font-size = 16px
   background-color: #333
   background-image: url("https://www.transparenttextures.com/patterns/dark-denim.png")
   overflow hidden
+  &:not(:first-child)
+    margin-top 3em
   span
     position relative
     font-size 1em
@@ -150,6 +161,7 @@ $primary-color = #999
     line-height inherit
     color #3d4351
     margin-top 0
+    padding-top 0
 
 
 
@@ -167,8 +179,8 @@ $primary-color = #999
 .timeline-info
   display flex
   .timeline-title
+    font-size 1.2em
     flex 1
-    margin-bottom 0
   span
     font-weight 700
     letter-spacing 0.2em
@@ -218,46 +230,68 @@ $primary-color = #999
 
 .timeline-content
   padding-bottom 1em
-  p code
-    padding 0.4em 0.8em
+  p
+    margin 0 0 0.5em
+  code
+    padding 0.2em 0.6em
     background #eee
-    font-size 0.9em
+    font-size 0.8em
     font-weight bold
-    border-radius 0.1em
+    border-radius 0.2em
   p:last-child
-    margin-bottom: 0
+    margin-bottom 0
   label
-    padding 0.4em 0.8em
-    background blue
-    color #fff
+    padding 0.2em 0.6em
+    margin 0 0.2em
+    background #eee
+    color #333
     font-weight bold
     border-radius 0.4em
-    font-size 0.75em
+    font-size 0.8em
+    &[color=warn]
+      color #a74c00
+    &[color=success]
+      color #0054a0
+
 
 /*----- TIMELINE PERIOD -----*/
 
 .period
-  padding: 0
+  padding 0
   .timeline-info
-    display: none
+    display none
   .timeline-marker
     &:before
-      background: transparent
-      content: ""
-      width: 1em
-      height: auto
-      border: none
-      border-radius: 0
-      top: 0
-      bottom: 2em
-      position: absolute
-      border-bottom: 0.2em solid #CCD5DB
+      background transparent
+      content ""
+      width 1em
+      height auto
+      border none
+      border-radius 0
+      top 0
+      bottom 2em
+      position absolute
+      border-bottom 0.2em solid #CCD5DB
     &:after
-      content: ""
-      height: 1em
-      top: auto
+      content ""
+      height 1em
+      top auto
 
   .timeline-content
-    padding: 1em 0 1em
+    display flex
+    padding 1em 0 1em
+    span
+      font-size 1em
   .timeline-title
-    margin: 0
+    margin 0
+    flex 1
+
+
+
+
+
+
+
+
+
+

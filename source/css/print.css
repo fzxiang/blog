@@ -20,6 +20,11 @@ html {
   line-height: 1.6;
 }
 
+#page-resume {
+  font-size: 10pt;
+  padding-top: 20pt;
+}
+
 html body {
   margin: 0;
 }
@@ -91,7 +96,7 @@ html dl dt::before {
 html dl dt::after {
   content: ':';
 }
-
+/*
 html table {
   border-collapse: collapse;
   width: 100%;
@@ -139,3 +144,4 @@ html table#total {
   position: absolute;
   width: 18cm;
 }
+*/
