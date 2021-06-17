@@ -1,1 +1,1 @@
-console.log('custom.js')
+console.log(process.argv)
