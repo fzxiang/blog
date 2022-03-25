@@ -4,11 +4,11 @@
   margin: 0;
   @bottom-left {
     color: #1ee494;
-    content: '♥ Thank you!';
+    content: "♥ Thank you!";
   }
   @bottom-right {
     color: #a9a;
-    content: 'community@kozea.fr | +33 4 78 84 19 28 | community.kozea.fr';
+    content: "community@kozea.fr | +33 4 78 84 19 28 | community.kozea.fr";
     font-size: 9pt;
   }
 }
@@ -29,7 +29,10 @@ html body {
   margin: 0;
 }
 
-.header, .footer, .btn, .back-to-top {
+.header,
+.footer,
+.btn,
+.back-to-top {
   display: none;
 }
 
@@ -44,7 +47,7 @@ html body {
 }
 
 .post-block:first-of-type {
-  padding-top: 0
+  padding-top: 0;
 }
 
 html h1 {
@@ -79,7 +82,8 @@ html dl {
   top: 0;
 }
 
-html dl dt, html dl dd {
+html dl dt,
+html dl dd {
   display: inline;
   margin: 0;
 }
@@ -89,12 +93,12 @@ html dl dt {
 }
 
 html dl dt::before {
-  content: '';
+  content: "";
   display: block;
 }
 
 html dl dt::after {
-  content: ':';
+  content: ":";
 }
 /*
 html table {

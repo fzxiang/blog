@@ -6,7 +6,8 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "format": "prettier --write \"source/**/*.(md)|(css)\""
   },
   "hexo": {
     "version": "5.3.0"
@@ -28,5 +29,8 @@
     "hexo-theme-next": "^8.2.0",
     "html2canvas": "^1.0.0-rc.7",
     "pjax": "^0.2.8"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.1"
   }
 }
