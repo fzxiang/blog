@@ -131,7 +131,7 @@ tidio:
 # 在侧边栏中打开指定聊天小部件的按钮。
 # 首先，你需要启用你想要的聊天服务来激活它的侧边栏按钮
 chat:
-  enable: true
+  enable: false
   service: tidio
   icon: fa fa-comment
   text: 与我联系
