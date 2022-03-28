@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>使用CSS打印HTML</title>
+    <url>/blog/2021/01/03/2021-01-03/</url>
+    <content><![CDATA[<p>关于使用CSS从浏览器打印到<code>打印机</code>,或打印<code>导出PDF</code>文档的一些提示。</p>
+<span id="more"></span> 
+
+<p>日常打印工作通常是操作办公软件来实现，如果遇到了需要打印网页，或者将当前网页变成PDF，那就要借助浏览器的<code>打印API</code>和<code>CSS</code>来实现想要的效果。</p>
+<p>浏览器实现打印非常简单，当打印文档且打印机不可用时，Chorme浏览器默认为”保存”， Safari浏览器在菜单栏中则会有一个专门的按钮。</p>
+<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><p>打印时，通常要处理是文档的某些元素的隐藏和显示，页眉、页脚中的一些东西，字体和大小间距，和侧栏的边距大小控制；</p>
+<ol>
+<li><p>当打印的CSS代码量少时，可以使用<code>@media print</code>媒体查询，将样式写在区块里；</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">/* ... */</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>如果用于打印CSS有很多，最好新建一个文件<code>print.css</code>用来存放打印的样式，这种方式只有浏览器在打印时才会加载。</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>print.css<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>print<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<h2 id="PDF中实现超链接"><a href="#PDF中实现超链接" class="headerlink" title="PDF中实现超链接"></a>PDF中实现超链接</h2><p>HTML5之所以强大，是因为有链接，所有被称为超文本是有原因的。但在打印时，我们可能会丢失很多信息，比如带有链接的<code>&lt;a&gt;</code>标签：<code>&lt;a href=&quot;xxx&quot;&gt;</code>；<br>好在CSS提供了一个很好的解决方案：</p>
+<ol>
+<li><p><strong>外部链接</strong>，使用<code>a[href*=&#39;//&#39;]</code>查找外部链接的标签，并将的链接放在伪元素<code>：after</code>的属性<code>content</code>中：</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">&#123;</span>
+  <span class="token selector">a[href*='//']:after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">" ("</span> <span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span> <span class="token string">") "</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> $primary<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>   <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><strong>内部链接</strong>，用于导航和内部索引</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">&#123;</span>
+  <span class="token selector">a:after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">" ("</span> <span class="token function">attr</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span> <span class="token string">") "</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> $primary<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+</li>
+</ol>
+<h2 id="打印页面配置"><a href="#打印页面配置" class="headerlink" title="打印页面配置"></a>打印页面配置</h2><ol>
+<li><p><strong>设置页面边距</strong>，纸张打印的单位是<code>厘米(cm)</code>、<code>英寸(in)</code></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@page</span></span> <span class="token punctuation">&#123;</span>
+  <span class="token property">margin-top</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+  <span class="token property">margin-left</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+  <span class="token property">margin-right</span><span class="token punctuation">:</span> 2cm<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p><code>@page</code>也可以用来只针对第一页，使用<code>@page :first</code>，或者使用<code>@page :left</code>和<code>@page: right</code>只针对左右两页。</p>
+</blockquote>
+</li>
+<li><p><strong>分页符</strong><br>当你要对指定的元素另起新一页，可以使用<code>page-break-before</code>或<code>page-break-after</code>来设置</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 指定.book-date 后面的文本另起一页 */</span>
+<span class="token selector">.book-date</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">/* 指定.post-content 前面的文本另起一页 */</span>
+<span class="token selector">.post-content</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">page-break-before</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+</li>
+</ol>
+<blockquote>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/page-break-after">分页符其它值</a>: </p>
+<p><code>auto</code>  </p>
+<p>初始值。 自动分页符（既不强制也不禁止）。</p>
+<p><code>always</code></p>
+<p>始终在元素后强制分页。</p>
+<p><code>avoid</code></p>
+<p>禁用在元素后分页符效果。</p>
+<p><strong><em>以下属性在(打印成手册，或者在PDF预览中使用双页预览)情况下生效：</em></strong></p>
+<p><code>left</code></p>
+<p>在元素之后足够的分页符，一直到一张空白的左页为止。</p>
+<p><code>right</code></p>
+<p>在元素之后足够的分页符，一直到一张空白的右页为止。</p>
+<p><code>recto</code></p>
+<p>如果进度页从左往右，等同于<code>right</code>。如果进度页从右往左，等同于<code>left</code>。</p>
+<p><code>verso</code></p>
+<p>如果进度页从左往右，等同于<code>left</code>。如果进度页从右往左，等同于<code>right</code>。</p>
+</blockquote>
+<ol start="3">
+<li><strong>图片造成了新分页</strong><br>在打印时某些未知情况下，有些图片会<strong>单独占据</strong>一页；这种情况下在<code>&lt;img&gt;</code>标签外包住一层<code>&lt;p&gt;</code>标签，同时设置样式：<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">p</span> <span class="token punctuation">&#123;</span>
+  <span class="token property">page-break-inside</span><span class="token punctuation">:</span> avoid<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+如果其它标签也出现和<code>img</code>类似情况，这种方式一样适用。</li>
+</ol>
+<ol start="4">
+<li><strong>PDF导出格式大小</strong><br>有三种方式可以导出PDF:</li>
+</ol>
+<ul>
+<li>❌ 使用系统对话框打印；</li>
+<li>❌ 点击 “在预览中打开PDF”；</li>
+<li>✅ 点击Chrome打印对话框中出现的 “保存 “按钮<br><img src="/blog/2021/01/03/2021-01-03/img_01.png" alt="三种方式可以导出PDF"> </li>
+</ul>
+<h2 id="Debug页面打印"><a href="#Debug页面打印" class="headerlink" title="Debug页面打印"></a>Debug页面打印</h2><p><code>Chrome DevTools</code>谷歌开发者工具可以模拟css媒体类型，强制选择<code>print</code>媒体类型下，可以调试页面布局。<br><img src="/blog/2021/01/03/2021-01-03/img_02.png" alt="Debug页面打印"><br><img src="/blog/2021/01/03/2021-01-03/img_03.png" alt="Debug页面打印"> </p>
+]]></content>
+      <categories>
+        <category>零碎笔记</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5-Resume(一)</title>
+    <url>/blog/2021/01/10/my-resume-1/</url>
+    <content><![CDATA[<p>每次更新简历都要经历三次繁琐步骤：Word编辑、排版、导出PDF格式；同时Word图形编辑又是要一番痛苦的操作，当新增的内容多了，还会涉及从新布局；<br>无奈想了想，如果借助HTML编辑我的简历，样式灵活可编辑，再通过CSS从浏览器打印到打印机,或着者导出PDF格式，流程操作方便了许多！</p>
+<p><a class="btn" href="#"><i class="fa fa-home"></i>Text & Icon (buggy)</a>
+<a class="btn" href="#"><i class="fa fa-home fa-fw"></i>Text & Icon (fixed width)</a></p>
+
+
+]]></content>
+      <categories>
+        <category>Resume</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+</search>
