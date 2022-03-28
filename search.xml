@@ -108,21 +108,4 @@
         <tag>CSS</tag>
       </tags>
   </entry>
-  <entry>
-    <title>HTML5-Resume(一)</title>
-    <url>/blog/2021/01/10/my-resume-1/</url>
-    <content><![CDATA[<p>每次更新简历都要经历三次繁琐步骤：Word编辑、排版、导出PDF格式；同时Word图形编辑又是要一番痛苦的操作，当新增的内容多了，还会涉及从新布局；<br>无奈想了想，如果借助HTML编辑我的简历，样式灵活可编辑，再通过CSS从浏览器打印到打印机,或着者导出PDF格式，流程操作方便了许多！</p>
-<p><a class="btn" href="#"><i class="fa fa-home"></i>Text & Icon (buggy)</a>
-<a class="btn" href="#"><i class="fa fa-home fa-fw"></i>Text & Icon (fixed width)</a></p>
-
-
-]]></content>
-      <categories>
-        <category>Resume</category>
-      </categories>
-      <tags>
-        <tag>HTML</tag>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
 </search>
