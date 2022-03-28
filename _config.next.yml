@@ -13,7 +13,7 @@ scheme: Mist
 
 # 主题暗色模式
 # 白天/夜间自动开启亮色/暗色模式
-darkmode: true
+darkmode: false
 
 # 知识共享许可证
 creative_commons:
