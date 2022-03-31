@@ -10,7 +10,7 @@
     "format": "prettier --write \"source/**/*.(md)|(css)\""
   },
   "hexo": {
-    "version": "5.4.0"
+    "version": "5.3.0"
   },
   "dependencies": {
     "gitalk": "^1.7.0",
